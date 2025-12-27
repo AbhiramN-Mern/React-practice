@@ -1,0 +1,12 @@
+.lbtn{
+    width: 200px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    border: 1.5px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
