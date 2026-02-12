@@ -1,26 +1,26 @@
-import React from 'react'
+import React, { useReducer } from 'react'
+  let initialState={Count:0}
 
-function reducer(state,action){
+  function reducer(state,action){
   switch(action.type){
-    case "INC":
-      return {Count:state.Count+1}
-    case "DEC":
-      return {Count:state.Count-1}
-      default:
-        return State
+      case "inc":
+        return {Count:state.Count+1}
+      case "dgc":
+        return {Count:state.Count-1}
+      case "reset":
+        return {Count:0}
+      }
   }
-}
-let initialState={Count:0}
 
 function App() {
-
-  const [state,dispatch]=React.useReducer(reducer,initialState)
+  const [state,dispatch]=useReducer(reducer,initialState)
   return (
-    <div>
-      <p>{state.Count}</p>
-      <button onClick={()=>dispatch({type:"INC"})}>+</button>
-      <button onClick={()=>dispatch({type:"DEC"})}>-</button>
-    </div>
+    <>
+    <h1>count is {state.Count}</h1>
+    <button onClick={()=>dispatch({type:"inc"})}>+ </button>
+    <button onClick={()=>dispatch({type:"dgc"})} >-</button>
+    <button onClick={()=>dispatch({type:"reset"})} >reset</button>
+    </>
   )
 }
 
